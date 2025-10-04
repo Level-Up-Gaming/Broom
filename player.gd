@@ -31,11 +31,5 @@ func _physics_process(delta):
 	
 	look_at = look_at.lerp(global_position + linear_velocity, delta * 5.0)
 	camera_3d.look_at(look_at)
-	reverse_camera.look_at(look_at)
-	_check_camera_switch()
-
-func _check_camera_switch():
-	if linear_velocity.dot(transform.basis.z) > 0:
-		camera_3d.current = true
-	else:
-		reverse_camera.current = true
+	#reverse_camera.look_at(look_at)
+	#_check_camera_switch()
